@@ -187,7 +187,9 @@ body {
 }
 #navigation--Wrap nav a:hover {
      color:#F24738;
+     color: hsl(224, 21%, 75%);
 }
+
 .navbar {
      position: fixed;
      top: 20px;
@@ -634,11 +636,12 @@ p {
   top: -3rem;
   left: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
   width: 200%;
   width: 150%;
   padding-block: .75rem;
+  padding-inline: 1rem;
   transform: translate3d(-25%, 0, 0);
   transform: translate3d(-50%, 0, 0);
   border: 1px solid hsl(0 0% 41% / .185);
@@ -692,7 +695,7 @@ p {
   margin-block-start: var(--space-md);
 /*   margin-block-start: calc(var(--space-md) * 3); */
   /*margin-block: calc(var(--space-md) * 3);*/
-  margin-block-end: calc(var(--space-md) * 3);
+  margin-block-end: calc(var(--space-md) * 4);
   font-family: "Bebas Neue";
   font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: bold;
@@ -713,7 +716,7 @@ p {
 
 @media (min-width: 320px) {
   .headline {
-    margin-block-start: calc(var(--space-md) * 3);
+    margin-block-start: calc(var(--space-md) * 6);
   }
 }
 
@@ -824,8 +827,7 @@ p {
 .banner p {
   font-size: 1rem;
   /*width: 65ch;*/
-  font-style: italic;
-  font-weight: 700;
+  font-weight: 300;
   /*margin-block-start: 1.5rem;*/
   margin-block-end: calc(var(--space-md) * 3);
 }
@@ -882,7 +884,7 @@ p {
 
 .section--title {
     grid-column: margin;
-    padding-inline: calc(var(--space-md) / 2);
+    /*padding-inline: calc(var(--space-md) / 2);*/
     /*margin-block-end: 3.5rem;*/
 }
 
@@ -893,7 +895,7 @@ p {
     }
     .section--title {
       grid-column: margin;
-      padding-inline-start: var(--gap);
+      padding-inline-start: calc(var(--gap) / 4);
     }
 }
 
@@ -1096,6 +1098,58 @@ radial-gradient(at 63% 45%, hsla(240,100%,4%,1) 0px, transparent 50%); */
     z-index: 1;
 }
 
+.listing-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    #listing-bar {
+        width: 600px;
+        margin: 0 auto;
+        border-radius: 12px 12px 0 0;
+        padding-bottom: 1rem !important;
+    }
+}
+
+.listing-bar .slider {
+    overflow: hidden;
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+}
+
+/* Slide elements */
+.listing-bar .slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;        /* ✅ keep slides within container width */
+  box-sizing: border-box;
+/*  padding-right: 2rem;  ✅ prevents text/button from overflowing behind dismiss button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listing-bar .slide span {
+    font-family: "DM Sans", serif, "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+    font-size: clamp(1.2rem, 0.766rem + 1.928vw, 2rem);
+    font-weight: 300;
+}
+
+.listing-bar .slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative; /* ✅ so the active one participates in flex layout */
+}
 .gallery {
   grid-column: full;
   display: grid;
@@ -1283,6 +1337,17 @@ main.content .gallery:nth-of-type(3) {
 
 .s3 {
     view-timeline-name: --s3;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 20%, hsl(240 28% 19% / 0.85) 50%, rgba(0, 0, 0, 0.9) 80%), url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/ctg--prof-clp-2316613-BKc%20__UeT22lHGnW.jpg);
+    background-position: center;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: hsl(42 62.5% 39.2% / .1);
+}
+
+.s4 {
+    view-timeline-name: --s4;
+    height: calc(100vh - (var(--container-padding) * 4));
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 20%, hsl(240 28% 19% / 0.85) 50%, rgba(0, 0, 0, 0.9) 80%), url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/ctg--prof-clp-2316613-BKc%20__UeT22lHGnW.jpg);
     background-position: center;
     background-size: 300%;
@@ -1687,17 +1752,17 @@ main.content .gallery:nth-of-type(3) {
   top: 0;
   width: 40px;
   height: 3px;
-  background-color: hsla(43.8, 0%, 75.3%, .3);
+  /*background-color: hsla(43.8, 0%, 75.3%, .3);*/
 }
 
 
 .dl--section {
   position: relative;
-  background: url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/kpa--hero-IMG-002__lrg_hbAo8-IfR.jpg);
+  /*background: url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/kpa--hero-IMG-002__lrg_hbAo8-IfR.jpg);*/
   background-size: 500%;
   background-position: center -400px;
   backdrop-filter: blur(4px);
-  margin-block-end: var(--space-md);
+  margin-block: calc(var(--gap) * 4);
 
   & > * {
     position: relative;
@@ -1724,9 +1789,7 @@ main.content .gallery:nth-of-type(3) {
   grid-column: full;
   padding-block: 6rem;
   padding-inline: var(--space);
-  outline: 1px solid hsla(43.8, 0%, 75.3%, .2);
   border-radius: 8px;
-  box-shadow: 0 0.05rem .31rem -0.05rem hsl(0,0%,55.3%);
 }
 
 .dl--section .dl--section_container .dl--single {
@@ -1755,9 +1818,35 @@ main.content .gallery:nth-of-type(3) {
 }*/
 
 .dl--single {
+  position: relative;
   /*align-self: center;*/
   /*text-align: center;*/
-  padding-inline-start: var(--space);
+  padding-inline: var(--space);
+}
+
+.dl--single::after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: -12px;
+  height: 150%;
+  width: 1px;
+  background-color: #c0c0c0;
+  margin-right: .5rem;
+}
+
+.qr--img-wrap {
+  padding: .25rem;
+  background-color: #fff;
+  width: 78px;
+  height: 78px;
+  border-radius: 4px;
+}
+
+.qr--img-wrap img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .meta--social-icon {
@@ -1826,6 +1915,7 @@ footer {
 
 .ft--content form {
     display: inline-block;
+    width: min(100%, 24rem);
     /*display: flex;*/
 }
 
@@ -1860,6 +1950,11 @@ footer {
     border: 0;
     padding-inline: 1rem;
     cursor: pointer;
+    transition: background .2s ease-in-out;
+
+    &:hover {
+      background: hsl(224, 21%, 75%);
+    }
   }  
 }
 
@@ -1900,8 +1995,8 @@ footer {
   }
   .ft--content .ft--footer-list {
     margin-block: 0;
-    /*margin-inline: auto;*/
-    flex: 0 1 auto;
+    margin-inline: auto;
+    flex: 0 1 100px;
   }
 }
 
