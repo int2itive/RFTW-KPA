@@ -937,7 +937,7 @@ p {
 }
 
 .section--profile .section--title {
-  grid-column: breakout;
+  grid-column: full;
 }
 
 .section--profile .section--title h1 {
@@ -953,6 +953,7 @@ p {
 
 .container:nth-last-of-type(-n+1) .section--title h1 { 
   text-align: right;
+  grid-column: breakout;
 /*  color: firebrick;*/
 }
 
