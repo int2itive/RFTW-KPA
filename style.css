@@ -937,7 +937,7 @@ p {
 }
 
 .section--profile .section--title {
-  grid-column: full;
+  grid-column: breakout;
 }
 
 .section--profile .section--title h1 {
