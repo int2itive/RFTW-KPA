@@ -287,7 +287,6 @@ button[data-v-6e829ace] {
     align-items: center;
     border-radius: 25px;
     display: flex;
-    height: 40px;
     height: 32px;
     justify-content: center;
 /*    margin: -5.8823529412vw auto 0;*/
@@ -354,7 +353,7 @@ button[data-v-6e829ace] {
 
 .audio-btn .label-wrapper[data-v-782638f6] {
     display: block;
-    height: 12px;
+    height: 14px;
     color: #c0c0c0;
     overflow: hidden;
 }
