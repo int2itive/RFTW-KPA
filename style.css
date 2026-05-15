@@ -729,7 +729,7 @@ p {
 
 .headline {
   margin-block-start: var(--space-md);
-  margin-block-end: calc(var(--space-md) * 4);
+  margin-block-end: calc(var(--space-md) * 2);
   /*margin-block-end: var(--space-md);*/
   font-family: "Bebas Neue";
   font-size: clamp(2rem, 6vw, 3.5rem);
