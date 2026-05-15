@@ -500,7 +500,7 @@ h1 {
 
 .artist__tags {
   position: absolute;
-  bottom: 120px;
+  bottom: 100px;
   /*width: 100%;*/
   width: max-content;
   display: flex;
