@@ -288,11 +288,11 @@ button[data-v-6e829ace] {
     border-radius: 25px;
     display: flex;
     height: 40px;
-    height: 34px;
+    height: 32px;
     justify-content: center;
 /*    margin: -5.8823529412vw auto 0;*/
     padding: 4px 16px 4px 4px;
-    padding: 0px 16px 0px 4px;
+    padding: 0px 16px 0px 2px;
     background-color: #000;
     background-color: rgba(0, 0, 0, .3);
     transition: background-color .5s cubic-bezier(.19,1,.22,1);
@@ -329,17 +329,17 @@ button[data-v-6e829ace] {
     background-color: hsl(43.8, 0%, 12.7%);
     border-radius: 100%;
     display: flex;
-    height: 32px;
+    height: 28px;
     justify-content: center;
     margin-right: 12px;
     position: relative;
-    width: 32px;
+    width: 28px;
 }
 
 .audio-btn .icon .audio-icon[data-v-782638f6] {
-    height: 14px;
+    height: 12px;
     position: relative;
-    width: 19px;
+    width: 18px;
 }
 
 .audio-btn .icon .audio-icon g[data-v-782638f6] {
@@ -354,7 +354,7 @@ button[data-v-6e829ace] {
 
 .audio-btn .label-wrapper[data-v-782638f6] {
     display: block;
-    height: 16px;
+    height: 12px;
     color: #c0c0c0;
     overflow: hidden;
 }
@@ -446,8 +446,8 @@ button[data-v-6e829ace] {
   height: 100%;
   background-image: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.95) 18%,
-    hsl(240 28% 19% / 0.80) 50%, 
+    rgba(0, 0, 0, 0.95) 30%,
+    hsl(240 28% 19% / 0.70) 50%, 
     rgba(0, 0, 0, 0.95) 98%);
   content: '';
 }
@@ -496,6 +496,38 @@ h1 {
 /*   border: 1px solid firebrick; */
   text-shadow: 0 .010em 2px rgba(0, 0, 0, 0.5);
   z-index: 10;
+}
+
+.artist__tags {
+  position: absolute;
+  bottom: 150px;
+  /*width: 100%;*/
+  width: max-content;
+  display: flex;
+  gap: .55rem;
+  z-index: 10;   
+  margin-left: 1.5rem;
+}
+
+.artist__tags span {
+  font-family: var(--ff-font-sans);
+  font-size: .625rem;
+  font-weight: 700;
+  text-transform: uppercase;  
+  color: #c0c0c0;
+  opacity: 0;
+  transform: translate3d(5px, 0, 0);
+  animation: titleFadeIn 1.2s ease-in-out 0.8s forwards;
+}
+
+.artist__tags span:nth-of-type(2) {
+  transform: translate3d(0, 0, 0);
+  animation-delay: 2.8s;
+}
+
+.artist__tags span:nth-of-type(3) {
+  transform: translate3d(-5px, 0, 0);
+  animation-delay: 1.8s;
 }
 
 .profile-img--cont {
@@ -1378,6 +1410,7 @@ main.content .gallery:nth-of-type(3) {
     aspect-ratio: 18 / 10;
     overflow: hidden;
     border-radius: .25rem;
+    box-shadow: 0 0.05rem .31rem -0.05rem hsl(0,0%,55.3%);
 }
 
 .overlay-col__img {
@@ -1400,6 +1433,7 @@ main.content .gallery:nth-of-type(3) {
     width: 100%;
     /*height: 100%;*/
     height: auto;
+    box-shadow: 0 0.05rem .31rem -0.05rem hsl(0,0%,55.3%);
 }
 
 .overlay-col.col-right .overlay-col__img img {
@@ -1410,19 +1444,19 @@ main.content .gallery:nth-of-type(3) {
 }
 
 .paragraph {
-    /*text-indent: 4em;*/
-    margin-bottom: 0;
-    font-size: 1.95em;
-    font-size: 12px;
-    line-height: 1.25;
-  margin-inline-start: -28px;
-  /*margin-block-end: 3rem;*/
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.25;
+  margin-inline-start: -48px;
+  padding-inline-start: calc(var(--space-md) / 4);
+  padding-inline-end: 0;
 }
 
-@media (width > 480px) {
-    .paragraph {
-        font-size: 1.95em;
-    }
+@media (width > 600px) {
+  .paragraph {
+    font-size: 1.95em;
+    padding-inline: calc(var(--space-md) / 2);
+  }
 }
 
 .scroll-section {
@@ -1505,6 +1539,7 @@ main.content .gallery:nth-of-type(3) {
     color: var(--text-muted);
     margin: 0;
     margin-block-start: var(--gap);
+    
     max-width: 500px;
     letter-spacing: -0.02em;
     animation: content-focus linear both;
@@ -1513,13 +1548,12 @@ main.content .gallery:nth-of-type(3) {
 }
 
 
-/*
-@media (max-width: 768px) {
+@media (width > 629px) {
     .focus-text {
-        font-size: 2rem;
+      margin-block-start: 1rem;
     }
 }
-*/
+
 
 .description {
     font-family: "raleway", sans-serif;
@@ -1590,7 +1624,7 @@ main.content .gallery:nth-of-type(3) {
         font-size: 1.1rem;
     }
     .cjEvTY-overlay, .s3--outerlay-overlay {
-        inset: 0 4rem 0 4rem;
+        inset: 0 6rem 0 6rem;
     }
 }
 
@@ -2195,3 +2229,10 @@ footer {
   }
 }
 
+
+@keyframes titleFadeIn {
+  100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+  }  
+}
