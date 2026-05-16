@@ -2121,6 +2121,13 @@ main.content .gallery:nth-of-type(3) {
     padding-inline: 1rem;
 }
 
+.track__title {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: hsl(267, 68%, 75%);
+  margin-block-start: .25rem;
+}
+
 footer {
   background-color: hsl(43.8, 0%, 8.5%);
   background-color: oklch(0.157 0.017 278.712);
