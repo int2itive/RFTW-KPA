@@ -1458,7 +1458,7 @@ main.content .gallery:nth-of-type(3) {
   font-size: 12px;
   line-height: 1.25;
   margin-inline-start: -48px;
-  margin-block-start: 0.5rem;
+  margin-block-start: 0.85rem;
   padding-inline-start: calc(var(--space-md) / 4);
   padding-inline-end: 0;
 }
