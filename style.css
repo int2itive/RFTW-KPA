@@ -2091,7 +2091,7 @@ main.content .gallery:nth-of-type(3) {
   margin-right: .5rem;
 }
 
-.product__images {
+.scan__images {
   display: flex;
   justify-content: center;
   padding-block: var(--gap);
