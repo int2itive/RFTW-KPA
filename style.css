@@ -1455,7 +1455,7 @@ main.content .gallery:nth-of-type(3) {
 
 .paragraph {
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 0.8125rem;
   line-height: 1.25;
   margin-inline-start: -48px;
   margin-block-start: 0.85rem;
