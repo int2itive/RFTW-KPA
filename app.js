@@ -6,10 +6,32 @@ const listingBar = document.getElementById("listing-bar");
 const linksList = document.querySelector('#navigation--Wrap ul');
 let gap = 50;
 
+const mainImage = document.getElementById("main-image");
+// const images = document.querySelectorAll(".product__image");
+// const mainImage = document.querySelector('.product__images > img');
+const images = document.querySelectorAll('.product__slider img');
 
+mainImage.src = images[0].src;
 
-let images = [ 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/pdl-prof-img-005__W45RwHr_qe20pfhxZ.png', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/pdl-prof-img-md2__iYgSM_M6gDha3Da.jpg',   'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/KP-IMG/pdl-prof-img-119-39M__yVb5suzX_SfaghTBKG.jpg', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/kpa--gal-IMG-070__RfAFDWNkV.png'
-];
+images.forEach((image) => {
+    image.addEventListener("click", (event) => {
+        // mainImage.classList.remove('updated');
+        // mainImage.src = event.target.src;
+        if (mainImage.classList.contains('updated')) {
+            mainImage.classList.remove('updated');
+        }
+        mainImage.src = event.target.src;
+        document
+            .querySelector(".product__image--active")
+            .classList.remove("product__image--active");
+
+        event.target.classList.add("product__image--active");
+        mainImage.classList.add('updated');
+    });
+
+});
+
+mainImage.classList.remove('updated');
 
 let othrImages = [ 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/scs-scrl-clp-07_gkMNyA3WQ.jpg', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/chin-scroll-clp-01_KfhofaCSd.jpg',   'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/jni-scrl-profile-15-002c_19nKnG7Yr.png', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/319722734_135851459309360_5051777608849275082_n_SvNz4xV4h5.jpg'
 ];
