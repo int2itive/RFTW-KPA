@@ -26,6 +26,7 @@ images.forEach((image) => {
             .classList.remove("product__image--active");
 
         event.target.classList.add("product__image--active");
+        mainImage.classList.remove('updated');
         mainImage.classList.add('updated');
     });
 
