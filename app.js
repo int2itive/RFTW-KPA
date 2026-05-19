@@ -11,28 +11,28 @@ const mainImage = document.getElementById("main-image");
 // const mainImage = document.querySelector('.product__images > img');
 const images = document.querySelectorAll('.product__slider img');
 
-mainImage.src = images[0].src;
+// mainImage.src = images[0].src;
 
-images.forEach((image) => {
-    image.addEventListener("click", (event) => {
-        // mainImage.classList.remove('updated');
-        // mainImage.src = event.target.src;
-        if (mainImage.classList.contains('updated')) {
-            mainImage.classList.remove('updated');
-        }
-        mainImage.src = event.target.src;
-        document
-            .querySelector(".product__image--active")
-            .classList.remove("product__image--active");
+// images.forEach((image) => {
+//     image.addEventListener("click", (event) => {
+//         // mainImage.classList.remove('updated');
+//         // mainImage.src = event.target.src;
+//         if (mainImage.classList.contains('updated')) {
+//             mainImage.classList.remove('updated');
+//         }
+//         mainImage.src = event.target.src;
+//         document
+//             .querySelector(".product__image--active")
+//             .classList.remove("product__image--active");
 
-        event.target.classList.add("product__image--active");
-        mainImage.classList.remove('updated');
-        mainImage.classList.add('updated');
-    });
+//         event.target.classList.add("product__image--active");
+//         mainImage.classList.remove('updated');
+//         mainImage.classList.add('updated');
+//     });
 
-});
+// });
 
-mainImage.classList.remove('updated');
+// mainImage.classList.remove('updated');
 
 let othrImages = [ 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/scs-scrl-clp-07_gkMNyA3WQ.jpg', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/chin-scroll-clp-01_KfhofaCSd.jpg',   'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/jni-scrl-profile-15-002c_19nKnG7Yr.png', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/319722734_135851459309360_5051777608849275082_n_SvNz4xV4h5.jpg'
 ];

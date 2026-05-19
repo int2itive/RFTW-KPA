@@ -2173,19 +2173,6 @@ https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/KP-IMG/ctg--thumbnail_eJ
 }
 
 
-@media (width > 599px) {
-  .dl--section {
-    margin-block-start: calc(var(--gap) * 4);
-  }
-  .dl--section .dl--section_container {
-    justify-content: center;
-  }
-  .dl--section .dl--section_container .dl--single {
-    font-size: clamp(1.15rem, 0.854rem + 1.478vw, 2rem);
-  }
-}
-
-
 .dl--single {
   position: relative;
   /*align-self: center;*/
@@ -2239,6 +2226,22 @@ https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/KP-IMG/ctg--thumbnail_eJ
   font-size: 1.2rem;
   color: hsl(267, 68%, 75%);
   margin-block-start: .5rem;
+}
+
+
+@media (width > 599px) {
+  .dl--section {
+    margin-block-start: calc(var(--gap) * 4);
+  }
+  .dl--section .dl--section_container {
+    justify-content: center;
+  }
+  .dl--section .dl--section_container .dl--single {
+    font-size: clamp(1.15rem, 0.854rem + 1.478vw, 2rem);
+  }
+  .scan__images {
+    padding-block: calc(var(--gap) * 2);
+  }
 }
 
 footer {
