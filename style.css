@@ -1151,8 +1151,10 @@ radial-gradient(at 63% 45%, hsla(240,100%,4%,1) 0px, transparent 50%); */
 
 .cjEvTY-overlay .overlay-corner,
 .s3--outerlay .overlay-corner {
-    border-top: 0.105rem solid hsl(40, 9%, 55%);
-    border-left: 0.105rem solid hsl(40, 9%, 55%);
+/*    border-top: 0.105rem solid hsl(40, 9%, 55%);
+    border-left: 0.105rem solid hsl(40, 9%, 55%);*/
+    border-top: 0.105rem solid hsl(260, 84%, 51%);
+    border-left: 0.105rem solid hsl(260, 84%, 51%);    
     border-top-left-radius: .6em;
     width: 2em;
     height: 2em;
@@ -1604,12 +1606,14 @@ main.content .gallery:nth-of-type(3) {
 .s3--outerlay .overlay-corner {
     border-top: 0.105rem solid hsl(40, 9%, 55%);
     border-left: 0.105rem solid hsl(40, 9%, 55%);
+    border-top: 0.105rem solid hsl(260, 84%, 51%);
+    border-left: 0.105rem solid hsl(260, 84%, 51%);     
     border-top-left-radius: .4em;
     width: 2em;
     height: 2em;
 }
 
-
+https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/KP-IMG/ctg--thumbnail_eJWs5EkOO.jpg
 
 .overlay-corner {
   border-top: 1px solid var(--color-light);
