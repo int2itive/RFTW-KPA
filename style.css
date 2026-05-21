@@ -855,6 +855,7 @@ p {
   grid-column: content;
   text-align: left;
   padding-inline-start: var(--space-md);
+  padding-inline-start: 0;
   margin-block-start: 4rem;
 }
 
