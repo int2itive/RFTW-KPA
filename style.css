@@ -1512,7 +1512,7 @@ main.content .gallery:nth-of-type(3) {
 
 .s3 {
     view-timeline-name: --s3;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 20%, hsl(240 28% 19% / 0.85) 50%, rgba(0, 0, 0, 0.9) 80%), url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/ctg--prof-clp-2316613-BKc%20__UeT22lHGnW.jpg);
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 20%, hsl(240 28% 19% / 0.85) 50%, rgba(0, 0, 0, 0.9) 80%), url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/KP-IMG/ctg--thumbnail_eJWs5EkOO.jpg);
     background-position: center;
     background-size: 300%;
     background-repeat: no-repeat;
@@ -1532,7 +1532,7 @@ main.content .gallery:nth-of-type(3) {
     view-timeline-name: --s4;
     height: calc(100vh - (var(--container-padding) * 4));
     height: calc(100vh - (var(--container-padding) * 8));
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 20%, hsl(240 28% 19% / 0.85) 50%, rgba(0, 0, 0, 0.9) 80%), url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/ctg--prof-clp-2316613-BKc%20__UeT22lHGnW.jpg);
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 20%, hsl(240 28% 19% / 0.85) 50%, rgba(0, 0, 0, 0.9) 80%), url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/KP-IMG/ctg--thumbnail_eJWs5EkOO.jpg);
     background-position: center;
     background-size: 300%;
     background-repeat: no-repeat;
