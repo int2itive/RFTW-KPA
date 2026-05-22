@@ -857,6 +857,7 @@ p {
   grid-column: content;
   text-align: left;
   padding-inline-start: var(--space-md);
+  padding-inline-start: 0;
   margin-block-start: 4rem;
 }
 
@@ -1509,7 +1510,7 @@ main.content .gallery:nth-of-type(3) {
     view-timeline-name: --s2;
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 20%, hsl(171, 76%, 26%) 50%, rgba(0, 0, 0, 0.9) 80%), url(https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/hvq--prof-img-C0_152401__GYPzF8Tdd.jpg);
     background-position: center center;
-    background-size: 300%;
+    background-size: 200%;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }
@@ -1774,9 +1775,13 @@ https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/KP-IMG/ctg--thumbnail_eJ
   margin-block-end: 0;
 }
 
+
 @media (min-width: 490px) {
   .overlay-nav-row {
     margin-block-end: 2rem;
+  }
+  .overlay-title {
+    margin-block-start: 2rem;
   }
 }
 
