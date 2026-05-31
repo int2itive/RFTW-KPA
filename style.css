@@ -2391,3 +2391,24 @@ footer {
       transform: translate3d(0, 0, 0);
   }  
 }
+
+.product__titles {
+  position: absolute;
+  left: 26.5%;
+  top: -14px;
+  width: 300px;
+}
+
+.product__title, 
+.product__cat {
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.product__title {
+  font-size: 1.4rem;
+}
+
+.product__cat {
+  font-weight: 700;
+}
