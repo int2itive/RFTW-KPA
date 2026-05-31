@@ -4,12 +4,14 @@ let audioBtn = document.querySelector('.media-audio--container button');
 let progressPath = document.querySelector('.progress-wrap path');
 const listingBar = document.getElementById("listing-bar");
 const linksList = document.querySelector('#navigation--Wrap ul');
-let gap = 50;
+let gap = 50, opacity = 0.6;
 
 const mainImage = document.getElementById("main-image");
 // const images = document.querySelectorAll(".product__image");
 // const mainImage = document.querySelector('.product__images > img');
 const images = document.querySelectorAll('.product__slider img');
+const imageTitle = document.querySelector('.product__title');
+const imageCategory = document.querySelector('.product__cat');
 
 mainImage.src = images[0].src;
 
@@ -33,6 +35,38 @@ images.forEach((image) => {
 });
 
 mainImage.classList.remove('updated');
+
+
+function imgClick(e) {
+  console.log(imageCategory.parentElement.children);
+  imageTitle.textContent = ''; imageCategory.textContent = '';
+  //Reset the opacity
+  images.forEach(img => img.style.opacity = 1);
+  
+  //Change the current image src to clicked img source
+  mainImage.src = e.target.src;
+  // const {productName, productCategory} = e.target.dataset;
+  const {
+            productName, 
+            productCategory
+        } = e.target.dataset;
+
+  console.log(productName);
+
+  imageTitle.textContent = productName;
+  imageCategory.textContent = productCategory;
+
+  //Add fade-in class
+  mainImage.classList.add('fade-in');
+  
+  //Remove fade-in class after 0.5 sec
+  setTimeout(() => mainImage.classList.remove('fade-in'), 500);
+  
+  //Changing the opacity of clicked image
+  e.target.style.opacity = opacity;
+}
+
+images.forEach(img => img.addEventListener('click', imgClick));
 
 let othrImages = [ 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/scs-scrl-clp-07_gkMNyA3WQ.jpg', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/chin-scroll-clp-01_KfhofaCSd.jpg',   'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/jni-scrl-profile-15-002c_19nKnG7Yr.png', 'https://ik.imagekit.io/ghow2otb3rc/Projects/SoM/Artists/319722734_135851459309360_5051777608849275082_n_SvNz4xV4h5.jpg'
 ];
