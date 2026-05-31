@@ -2397,6 +2397,7 @@ footer {
   left: 26.5%;
   top: -14px;
   width: 300px;
+  z-index: 5;
 }
 
 .product__title, 
