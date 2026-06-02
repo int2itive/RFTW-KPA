@@ -2400,6 +2400,14 @@ footer {
   z-index: 5;
 }
 
+.product__titles.content-item {
+  visibility: hidden;
+}
+
+.product__titles.content-item.active {
+  visibility: visible;
+}
+
 .product__title, 
 .product__cat {
   font-family: system-ui, sans-serif;
