@@ -14,32 +14,33 @@ const imageTitle = document.querySelector('.product__title');
 const imageCategory = document.querySelector('.product__cat');
 
 mainImage.src = images[0].src;
+mainImage.classList.add('updated');
 
-images.forEach((image) => {
-    image.addEventListener("click", (event) => {
-        // mainImage.classList.remove('updated');
-        // mainImage.src = event.target.src;
-        if (mainImage.classList.contains('updated')) {
-            mainImage.classList.remove('updated');
-        }
-        mainImage.src = event.target.src;
-        document
-            .querySelector(".product__image--active")
-            .classList.remove("product__image--active");
+// images.forEach((image) => {
+//     image.addEventListener("click", (event) => {
+//         // mainImage.classList.remove('updated');
+//         // mainImage.src = event.target.src;
+//         if (mainImage.classList.contains('updated')) {
+//             mainImage.classList.remove('updated');
+//         }
+//         mainImage.src = event.target.src;
+//         document
+//             .querySelector(".product__image--active")
+//             .classList.remove("product__image--active");
 
-        event.target.classList.add("product__image--active");
-        mainImage.classList.remove('updated');
-        mainImage.classList.add('updated');
-    });
+//         event.target.classList.add("product__image--active");
+//         mainImage.classList.remove('updated');
+//         mainImage.classList.add('updated');
+//     });
 
-});
+// });
 
-mainImage.classList.remove('updated');
+
+let productWrap = document.querySelector('#products');
+let productItems = productWrap.querySelectorAll('.product__titles');
 
 
 function imgClick(e) {
-  console.log(imageCategory.parentElement.children);
-  imageTitle.textContent = ''; imageCategory.textContent = '';
   //Reset the opacity
   images.forEach(img => img.style.opacity = 1);
   
@@ -47,14 +48,16 @@ function imgClick(e) {
   mainImage.src = e.target.src;
   // const {productName, productCategory} = e.target.dataset;
   const {
+            productIndex, 
             productName, 
             productCategory
         } = e.target.dataset;
 
-  console.log(productName);
+  let mruIndex = productItems[parseInt(productIndex) - 1]; // console.log(mruIndex);
+  
 
-  imageTitle.textContent = productName;
-  imageCategory.textContent = productCategory;
+  // imageTitle.textContent = productName;
+  // imageCategory.textContent = productCategory;
 
   //Add fade-in class
   mainImage.classList.add('fade-in');
@@ -225,5 +228,70 @@ linksList.addEventListener('click', (e) => {
     playBtnNavigation();
     getSrollTarget(lnk);
 });
+
+
+function initTabSystem(){
+  let wrappers = document.querySelectorAll('#products');
+  
+  if (mainImage.classList.contains('updated')) {
+    mainImage.classList.remove('updated');
+  }
+
+  wrappers.forEach((wrapper) => {
+    let productItems = productWrap.querySelectorAll('.product__titles');
+
+    // let activeButton = buttons[0];
+    let activeContent = productItems[0]; // console.log(activeContent);
+    
+    let isAnimating = false;
+
+    function switchTab(index, initial = false) {
+      console.log(index);
+      if (!initial && isAnimating) return; // ignore click if the clicked button is already active 
+      isAnimating = true; // keep track of whether or not one is moving, to prevent overlap
+
+      const outgoingContent = activeContent;
+      const incomingContent = productItems[index];
+
+      let outgoingLines = outgoingContent.querySelectorAll("[data-tabs-fade]") || [];
+      let incomingLines = incomingContent.querySelectorAll("[data-tabs-fade]");
+
+      const timeline = gsap.timeline({
+        defaults:{
+          ease:"power3.inOut"
+        },
+        onComplete: () => {
+          if(!initial){
+            outgoingContent && outgoingContent.classList.remove("active");
+          }
+          activeContent = incomingContent;
+          isAnimating = false;
+        },
+      });
+
+      incomingContent.classList.add("active");
+
+      timeline
+        .to(outgoingLines, { y: "-2em", autoAlpha:0 }, 0)
+        .fromTo(incomingLines, { y: "2em", autoAlpha:0 }, { y: "0em", autoAlpha:1, stagger: 0.075 }, 0.3)
+        // .fromTo(incomingLines, { y: "2em", autoAlpha:0 }, { y: "0em", autoAlpha:1, stagger: 0.075 }, .4)
+        // .fromTo(incomingLines, { y: "2em", autoAlpha:0 }, { y: "0em", autoAlpha:1, stagger: 0.075 }, 0.4)
+    }
+
+
+    switchTab(0, true); // on page load
+ 
+    images.forEach((img, i) => {
+      img.addEventListener("click", () => switchTab(i)); 
+    });
+
+    productItems[0].classList.add("active");
+    // visualItems[0].classList.add("active");
+    // buttons[0].classList.add("active");   
+
+  });
+}
+
+initTabSystem();
 
 
