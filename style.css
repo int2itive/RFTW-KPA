@@ -2416,6 +2416,7 @@ footer {
 
 .product__title {
   font-size: 1.4rem;
+  margin-block-end: 0;
 }
 
 .product__cat {
